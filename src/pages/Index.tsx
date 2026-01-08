@@ -20,29 +20,30 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Hero onExploreClick={scrollToProducts} />
-      
-      <div 
-        ref={featuresRef.ref}
-        className={`scroll-reveal ${featuresRef.isVisible ? 'revealed' : ''}`}
-      >
-        <Features />
-      </div>
-      
-      <div 
+      <div
         ref={productsRef.ref}
         className={`scroll-reveal ${productsRef.isVisible ? 'revealed' : ''}`}
       >
         <FeaturedProducts />
       </div>
-      
-      <div 
+
+      <div
+        ref={featuresRef.ref}
+        className={`scroll-reveal ${featuresRef.isVisible ? 'revealed' : ''}`}
+      >
+        <Features />
+      </div>
+
+
+
+      <div
         ref={testimonialsRef.ref}
         className={`scroll-reveal ${testimonialsRef.isVisible ? 'revealed' : ''}`}
       >
         <Testimonials />
       </div>
-      
-      <div 
+
+      <div
         ref={ctaRef.ref}
         className={`scroll-reveal ${ctaRef.isVisible ? 'revealed' : ''}`}
       >

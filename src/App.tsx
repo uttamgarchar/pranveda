@@ -21,14 +21,16 @@ import AdminPanel from "./pages/AdminPanel";
 import Auth from "./pages/Auth";
 import OrderHistory from "./pages/OrderHistory";
 import { Product } from "@/components/ProductCard";
+import ScrollToTop from "./components/ScrollTop";
 
 const queryClient = new QueryClient();
 
 const AnimatedRoutes = ({ onAddToCart }: { onAddToCart: (product: Product) => void }) => {
   const location = useLocation();
-  
+
   return (
     <AnimatePresence mode="wait">
+      <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><Index /></PageTransition>} />
         <Route path="/products" element={<PageTransition><Products onAddToCart={onAddToCart} /></PageTransition>} />
@@ -65,7 +67,7 @@ const AppContent = () => {
       }
       return [...prev, { ...product, quantity: 1 }];
     });
-    
+
     toast({
       title: "Added to cart",
       description: `${product.name} has been added to your cart.`,
@@ -113,9 +115,9 @@ const AppContent = () => {
 
   return (
     <>
-      <Navbar 
-        cartItemsCount={cartItemsCount} 
-        onCartClick={() => setIsCartOpen(true)} 
+      <Navbar
+        cartItemsCount={cartItemsCount}
+        onCartClick={() => setIsCartOpen(true)}
       />
       <AnimatedRoutes onAddToCart={handleAddToCart} />
       <Footer />
