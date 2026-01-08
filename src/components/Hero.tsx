@@ -69,9 +69,9 @@ const Hero = ({ onExploreClick }: HeroProps) => {
   const logoStyle = isIdle
     ? {}
     : {
-        transform: `translate(${transform.x}px, ${transform.y}px) rotateX(${transform.rotateX}deg) rotateY(${transform.rotateY}deg)`,
-        transition: "transform 0.25s ease-out",
-      };
+      transform: `translate(${transform.x}px, ${transform.y}px) rotateX(${transform.rotateX}deg) rotateY(${transform.rotateY}deg)`,
+      transition: "transform 0.25s ease-out",
+    };
 
   return (
     <section className="relative bg-secondary py-20 md:py-32 overflow-hidden min-h-[80vh] flex items-center">
@@ -104,13 +104,13 @@ const Hero = ({ onExploreClick }: HeroProps) => {
         <Sprout className="absolute top-28 left-[55%] w-7 h-7 text-primary/10 animate-float animation-delay-600" />
         <Leaf className="absolute top-4 right-[45%] w-6 h-6 text-primary/12 animate-float animation-delay-200 -rotate-20" />
         <TreeDeciduous className="absolute top-14 left-[70%] w-8 h-8 text-primary/8 animate-float animation-delay-400" />
-        
+
         {/* Upper-middle area leaves */}
         <Leaf className="absolute top-[25%] left-[2%] w-10 h-10 text-primary/10 animate-float animation-delay-300 rotate-60" />
         <Sprout className="absolute top-[28%] left-[18%] w-6 h-6 text-primary/12 animate-float animation-delay-500" />
         <Leaf className="absolute top-[22%] right-[18%] w-8 h-8 text-primary/8 animate-float animation-delay-100 -rotate-30" />
         <Leaf className="absolute top-[30%] right-[3%] w-12 h-12 text-primary/10 animate-float animation-delay-400 rotate-45" />
-        
+
         {/* Middle area leaves */}
         <TreeDeciduous className="absolute top-1/3 left-[3%] w-14 h-14 text-primary/6 animate-float animation-delay-600" />
         <Leaf className="absolute top-1/2 left-[8%] w-10 h-10 text-primary/10 animate-float animation-delay-200 rotate-180" />
@@ -120,13 +120,13 @@ const Hero = ({ onExploreClick }: HeroProps) => {
         <Sprout className="absolute top-[50%] right-[8%] w-9 h-9 text-primary/10 animate-float animation-delay-300" />
         <Leaf className="absolute top-[38%] left-[6%] w-5 h-5 text-primary/15 animate-float animation-delay-600 -rotate-60" />
         <TreeDeciduous className="absolute top-[48%] right-[2%] w-11 h-11 text-primary/8 animate-float animation-delay-200" />
-        
+
         {/* Lower-middle area leaves */}
         <Leaf className="absolute top-[60%] left-[4%] w-9 h-9 text-primary/10 animate-float animation-delay-400 rotate-75" />
         <Sprout className="absolute top-[65%] left-[15%] w-6 h-6 text-primary/12 animate-float animation-delay-100" />
         <Leaf className="absolute top-[62%] right-[15%] w-10 h-10 text-primary/8 animate-float animation-delay-500 -rotate-45" />
         <Leaf className="absolute top-[68%] right-[6%] w-7 h-7 text-primary/10 animate-float animation-delay-300 rotate-30" />
-        
+
         {/* Bottom area leaves */}
         <Sprout className="absolute bottom-32 left-[12%] w-12 h-12 text-primary/8 animate-float animation-delay-500" />
         <Leaf className="absolute bottom-20 left-[25%] w-10 h-10 text-primary/10 animate-float animation-delay-300 rotate-45" />
@@ -145,7 +145,7 @@ const Hero = ({ onExploreClick }: HeroProps) => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Interactive Logo Section */}
         <div className="flex flex-col items-center justify-center mb-12">
-          <div 
+          <div
             ref={logoRef}
             className="relative perspective-1000"
             style={{ perspective: "1000px" }}
@@ -159,15 +159,15 @@ const Hero = ({ onExploreClick }: HeroProps) => {
             <div className="absolute bottom-8 -left-5 w-2 h-2 bg-primary/28 rounded-full animate-float animation-delay-600 blur-[1px]"></div>
             <div className="absolute bottom-4 -right-6 w-3 h-3 bg-primary/32 rounded-full animate-float animation-delay-100 blur-[1px]"></div>
             <div className="absolute -bottom-2 left-8 w-2 h-2 bg-primary/30 rounded-full animate-float animation-delay-400 blur-[1px]"></div>
-            
+
             {/* Pulsing glow effect */}
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse-glow scale-110"></div>
             <div className="absolute inset-0 bg-primary/10 rounded-full blur-2xl animate-pulse-glow animation-delay-500 scale-125"></div>
-            
+
             {/* Logo with mouse-follow effect */}
-            <img 
-              src={pranvedaLogo} 
-              alt="Pranveda Logo" 
+            <img
+              src={pranvedaLogo}
+              alt="Pranveda Logo"
               className={`w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain relative z-10
                 drop-shadow-[0_10px_30px_hsl(153_40%_35%/0.2)] cursor-pointer
                 hover:drop-shadow-[0_20px_50px_hsl(153_40%_35%/0.35)]
@@ -193,17 +193,17 @@ const Hero = ({ onExploreClick }: HeroProps) => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight animate-fade-up drop-shadow-lg">
             Discover Nature's Healing Power
           </h1>
-          
+
           <p className="text-lg md:text-xl text-muted-foreground animate-fade-up animation-delay-200 max-w-2xl mx-auto leading-relaxed">
-            Premium Ayurvedic products rooted in ancient wisdom, 
+            Premium Ayurvedic products rooted in ancient wisdom,
             <span className="text-primary font-semibold"> crafted with love from nature </span>
             for your modern wellness journey
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-fade-up animation-delay-400">
-            <Button 
-              size="lg" 
-              className="text-base group bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 transition-all duration-500 px-8 py-6 text-lg" 
+            <Button
+              size="lg"
+              className="text-base group bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 transition-all duration-500 px-8 py-6 text-lg"
               onClick={onExploreClick}
             >
               <Sprout className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
@@ -221,10 +221,6 @@ const Hero = ({ onExploreClick }: HeroProps) => {
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse animation-delay-200"></div>
               <span>Lab Tested</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse animation-delay-400"></div>
-              <span>Eco-Friendly</span>
             </div>
           </div>
         </div>
