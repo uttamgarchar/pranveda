@@ -1,0 +1,474 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Minimalist Green Theme - No Gradients */
+    --background: 0 0% 100%; /* Pure White */
+    --foreground: 150 30% 15%; /* Dark Green */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 150 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 15%;
+
+    --primary: 153 40% 35%; /* Forest Green */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 140 20% 95%; /* Very Light Green */
+    --secondary-foreground: 150 30% 15%;
+
+    --muted: 140 15% 96%;
+    --muted-foreground: 150 15% 45%;
+
+    --accent: 153 40% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 15% 88%;
+    --input: 140 15% 88%;
+    --ring: 153 40% 35%;
+
+    --radius: 0.5rem;
+    
+    --shadow-soft: 0 2px 8px hsl(150 30% 15% / 0.06);
+    --shadow-medium: 0 4px 16px hsl(150 30% 15% / 0.1);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --animation-duration: 0.6s;
+    --animation-delay: 0.1s;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 150 30% 15%;
+    --sidebar-primary: 153 40% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 140 20% 95%;
+    --sidebar-accent-foreground: 150 30% 15%;
+    --sidebar-border: 140 15% 88%;
+    --sidebar-ring: 153 40% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    position: relative;
+  }
+
+  /* Subtle grid pattern background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image: 
+      linear-gradient(to right, hsl(140 20% 90% / 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(140 20% 90% / 0.6) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer utilities {
+  /* Fade up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+  
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Scale in animation */
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Slide in from left */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slide in from right */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Float right animation */
+  @keyframes floatRight {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Float left animation */
+  @keyframes floatLeft {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Idle float animation for mouse interaction */
+  @keyframes floatIdle {
+    0%, 100% {
+      transform: translateY(0) rotateX(0) rotateY(0);
+    }
+    50% {
+      transform: translateY(-10px) rotateX(2deg) rotateY(0);
+    }
+  }
+
+  /* Falling leaves animation */
+  @keyframes fallingLeaf {
+    0% {
+      transform: translateY(-100px) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    25% {
+      transform: translateY(25vh) translateX(20px) rotate(90deg);
+    }
+    50% {
+      transform: translateY(50vh) translateX(-15px) rotate(180deg);
+    }
+    75% {
+      transform: translateY(75vh) translateX(25px) rotate(270deg);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(10px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fallingLeaf2 {
+    0% {
+      transform: translateY(-100px) translateX(0) rotate(45deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    25% {
+      transform: translateY(25vh) translateX(-25px) rotate(135deg);
+    }
+    50% {
+      transform: translateY(50vh) translateX(20px) rotate(225deg);
+    }
+    75% {
+      transform: translateY(75vh) translateX(-20px) rotate(315deg);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(-10px) rotate(405deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fallingLeaf3 {
+    0% {
+      transform: translateY(-100px) translateX(0) rotate(-30deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    25% {
+      transform: translateY(25vh) translateX(30px) rotate(60deg);
+    }
+    50% {
+      transform: translateY(50vh) translateX(-25px) rotate(150deg);
+    }
+    75% {
+      transform: translateY(75vh) translateX(15px) rotate(240deg);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(-5px) rotate(330deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-float-idle {
+    animation: floatIdle 3s ease-in-out infinite;
+  }
+
+  .animate-falling-leaf {
+    animation: fallingLeaf 8s ease-in-out infinite;
+  }
+
+  .animate-falling-leaf-2 {
+    animation: fallingLeaf2 10s ease-in-out infinite;
+  }
+
+  .animate-falling-leaf-3 {
+    animation: fallingLeaf3 12s ease-in-out infinite;
+  }
+  
+  /* Pulse glow animation */
+  @keyframes pulseGlow {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation classes */
+  .animate-fade-up {
+    animation: fadeUp var(--animation-duration) ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn var(--animation-duration) ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn var(--animation-duration) ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft var(--animation-duration) ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight var(--animation-duration) ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-right {
+    animation: floatRight 2s ease-in-out infinite;
+  }
+
+  .animate-float-left {
+    animation: floatLeft 2s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(var(--primary), 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Staggered animation delays */
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  
+  /* Scroll reveal */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

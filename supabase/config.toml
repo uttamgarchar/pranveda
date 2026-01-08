@@ -1,0 +1,4 @@
+project_id = "lgnbykjfibzyhbwvbxcy"
+
+[functions.razorpay-payment]
+verify_jwt = false
