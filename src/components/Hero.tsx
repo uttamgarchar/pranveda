@@ -178,7 +178,7 @@ const Hero = ({ onExploreClick }: HeroProps) => {
 
           {/* Mouse interaction hint */}
           <p className="mt-6 text-sm text-muted-foreground animate-fade-up animation-delay-300">
-            Move your mouse to interact with the logo
+
           </p>
         </div>
 
